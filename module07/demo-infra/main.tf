@@ -1,5 +1,5 @@
 locals {
-  rg_name = terraform.workspace == "default" ? "${var.rg_name}-${var.base_name}": "${var.rg_name}-${var.base_name}-${terraform.workspace}"
+  rg_name = terraform.workspace == "default" ? "${var.rg_name}-${var.base_name}" : "${var.rg_name}-${var.base_name}-${terraform.workspace}"
 }
 
 
