@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "rg_backend_tfstate"
     storage_account_name = "sabetfsfztzkj"
     container_name       = "tfstate"
-    key                  = "demo-infra.terraform.tfstate"
+    key                  = "opp2${terraform.workspace}.terraform.tfstate"
   }
 }
 
