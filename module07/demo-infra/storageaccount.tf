@@ -1,5 +1,5 @@
 locals {
-  sa_name = terraform.workspace == "default" ? "${lower(var.sa_name)}${lower(var.base_name)}${random_string.random_string.result}": "${lower(var.sa_name)}${lower(var.base_name)}${lower(terraform.workspace)}${random_string.random_string.result}"
+  sa_name = terraform.workspace == "default" ? "${lower(var.sa_name)}${lower(var.base_name)}${random_string.random_string.result}" : "${lower(var.sa_name)}${lower(var.base_name)}${lower(terraform.workspace)}${random_string.random_string.result}"
 }
 
 resource "azurerm_storage_account" "sa" {
@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "sa" {
 }
 
 resource "azurerm_storage_container" "sc" {
-  name                  = "${var.sc_name}${var.base_name}"
+  name                  = "${lower(var.sc_name)}${lower(var.base_name)}"
   storage_account_name  = azurerm_storage_account.sa.name
   container_access_type = "private"
 }
