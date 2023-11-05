@@ -1,7 +1,7 @@
 ###### General variables ######
 variable "base_name" {
   type        = string
-  default     = "demo"
+  default     = "OT"
   description = "value of the base name"
 }
 
@@ -92,6 +92,6 @@ variable "pip_name" {
 
 variable "vm_username" {
   type        = string
-  default     = "demoadmin"
+  default     = "OTadmin"
   description = "Username for the virtual machine"
 }
