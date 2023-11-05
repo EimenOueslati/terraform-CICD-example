@@ -87,16 +87,16 @@ In order to use the CI/CD workflow, the pre-requisites marked mandatory above ha
 # Infrastructure backend
 The backend used in this configuration is the same one we were instructed to create in the weekly assignment during the lecture labs. the storage account for the backend contains a storage container that holds  the tfstate files. There is a file for each workspace. The backend is defined in the providers configuration file.
 
-![Alt text](images/image-1.png)
+![Alt text](Images/image-1.png)
 
 # Infrastructure deployment
 The infrastructure is deployed to three different workspaces. The first workspace is the dev workspace which is used for development and testing. The second workspace is the stage workspace which is used for staging and testing. The third workspace is the prod workspace which is used for production. The infrastructure is deployed to the workspaces using the CI/CD workflow. The workflow is triggered when a push to the main branch happens. The workflow will then deploy the infrastructure to the dev workspace. After the deployment is completed, the stage workflow will be triggered which will deploy the infrastructure to the stage workspace. After the deployment is completed, the prod workflow will be triggered which will deploy the infrastructure to the prod workspace. The prod workflow will require approval from at least one person before it can be executed.
-![Alt text](images/image.png)
+![Alt text](Images/image.png)
 ## The resources deployed to the dev workspace:
-![Alt text](images/image-2.png)
+![Alt text](Images/image-2.png)
 ## The resources deployed to the stage workspace:
-![Alt text](images/image-3.png)
+![Alt text](Images/image-3.png)
 ## The resources deployed to the prod workspace:
-![Alt text](images/image-4.png)
+![Alt text](Images/image-4.png)
 # Destruction of resources:
 The resources are manually destroyed using the command "terraform destroy". This command will destroy all resources managed by the current configuration. This command is just an alias for the command "terraform apply -destroy". The command will ask for confirmation before destroying the resources.
