@@ -8,8 +8,8 @@ on:
   push:
     branches-ignore:
       - 'main'
-    paths:
-      - '/module07/demo-infra/**'
+    #paths:
+      #- '/module07/demo-infra/**'
 
 
 
