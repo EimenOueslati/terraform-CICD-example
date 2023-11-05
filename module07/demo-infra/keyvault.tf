@@ -1,11 +1,12 @@
 locals {
   kv_name  = terraform.workspace == "default" ? "${var.kv_name}-${var.base_name}": "${var.kv_name}-${var.base_name}-${terraform.workspace}"
+  sa_accesskey = terraform.workspace == "default" ? "${var.sa_accesskey_name}-${var.base_name}": "${var.sa_accesskey_name}-${var.base_name}-${terraform.workspace}"
 }
 
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv" {
-  name                        = "${lower(local.kv_name)}${random_string.random_string.result}"
+  name                        = "${local.kv_name}${random_string.random_string.result}"
   location                    = azurerm_resource_group.rg-infra.location
   resource_group_name         = azurerm_resource_group.rg-infra.name
   enabled_for_disk_encryption = true
