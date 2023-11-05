@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "sa" {
-  name                     = "${var.sa_name}${var.base_name}${random_string.random_string.result}"
+  name                     = "${var.sa_name}${var.base_name}${terraform.workspace}${random_string.random_string.result}"
   resource_group_name      = azurerm_resource_group.rg-infra.name
   location                 = azurerm_resource_group.rg-infra.location
   account_tier             = "Standard"
