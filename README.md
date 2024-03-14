@@ -1,4 +1,3 @@
-# Assignment 2 - IaC
 # Pre-requisites (Windows)
 
 In order to use the configuration files in the folder some software installations are recommended and/or necessary:
